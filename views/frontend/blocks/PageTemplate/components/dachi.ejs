@@ -1,0 +1,46 @@
+﻿	
+
+				<% var masFoto = []; %>
+               <% if(content.length) {
+                content.forEach(function(detail){ %>
+              
+					
+				<div class="row">
+					<div class="col-xs-6">
+						<% if(detail.foto.length){ %>
+							<div>
+								<% var masFoto = detail.foto.split(','); var LenghtmasFoto = masFoto.length; %>
+								<% if(detail.foto){ %>
+									<img src="/images/prodamdachi/<%= masFoto[0] %>" width="340" height="">
+								<% }else{ %>
+									нет фото
+								<% } %>
+							</div>
+							
+							<div>
+								<% if(LenghtmasFoto>1){ %>
+									<% for(var j=0; j<LenghtmasFoto; j++ ){ %>
+										<span class="smallfoto"><img src="/images/prodamdachi/<%= masFoto[j] %>" width="50" height=""></span>
+									<% } %>
+								<% } %>
+							
+							</div>
+						<% } %>
+					</div>
+					<div class="col-xs-6">
+					<p><span class="glyphicon glyphicon-time"></span> дата выставления <%= dateFormat(detail.created,"yyyy-mm-dd HH:MM:ss") %></p>
+					<p>номер участка <%= detail.num_uc %></p>
+					<p>площадь участка <%= detail.plosh_uc %></p>
+					<p>контактное лицо <%= detail.contact_fio %></p>
+					<p>контактный телефон <%= detail.contact_phone %></p>
+					<p>детальное описание<%= detail.opis_uc %></p>
+					<p>желаемая сумма <%= detail.price %></p>
+					</div>
+				</div>
+				 <hr>
+				<%	})  %>
+				<%	} else{ %>
+				выставленных участков нет
+				<%	}  %>
+			
+	

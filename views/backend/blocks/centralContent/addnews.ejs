@@ -1,0 +1,38 @@
+ <h2 class="sub-header">Добавление новости</h2>
+ <form class="form-horizontal" name="form-news" method="post" action="">
+  <div class="form-group">
+    <label for="inputEmail3" class="col-sm-2 control-label">Тема новости</label>
+    <div class="col-sm-10">
+      <input type="text" name="name" class="form-control" placeholder="Тема новости">
+    </div>
+  </div>
+  
+ <div class="form-group">
+    <label class="col-sm-2 control-label">Полное текст новости</label>
+    <div class="col-sm-10">
+      <textarea name="full" class="form-control" rows="5"></textarea>
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <label for="col-sm-2 control-label" class="col-sm-2 control-label">Важность</label>
+    <div class="col-sm-10">
+      <select name="vazn">
+		<option disabled value="0">Выберите важность</option>
+		<option value="1">Очень важная</option>
+		<option selected value="2">Обычная</option>
+	  </select>
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <input type="submit" name="submit" value="Сохранить">
+	 <input type="button" name="cancel" value="Cancel" class="Сбросить" onclick="cancelNews()">
+    </div>
+  </div>
+</form>
+ 
+ 
+
+ 

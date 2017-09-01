@@ -1,0 +1,65 @@
+ <h1 class="page-header">Председатели товариществ</h1>
+        
+		<div class="data-btn">
+			<button class="btn btn-success btn-lg" onClick="addface();">+ Добавить данные по должностным лицам</button>
+		</div>	
+		 
+		 
+		 <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>ФИО</th>
+				  <th>Должность</th>
+				  <th>Телефон</th>
+				  <th>Фото</th>
+				  
+                </tr>
+              </thead>
+              <tbody>
+               <% if(data.length) {
+							data.forEach(function(detail){ %>
+								<tr>
+									
+									<td><%= detail.fio %></td>
+									<td><%= detail.dolz %></td>
+									<td><%= detail.phone %></td>
+									<td>
+										<% if(detail.foto){ %>
+											<img src="/images/face/<%= detail.foto %>" width="100" height="">
+										<% }else{ %>
+											нет фото
+										<% } %>
+									</td>
+									
+									
+									<td>
+										<!--<a class="a-inside edit" href="/backend/face/edit/<%= detail.id %>" >Редактировать</a>-->
+										<a class="a-inside delete" href="/backend/face/delete/<%= detail.id %>" >Удалить</a>
+									</td>
+								</tr>
+
+
+
+
+						<%    })
+						}else{ %>
+
+						<tr>
+							<td colspan="4">Нет данных по должностным лицам</td>
+						</tr>
+
+						<%
+						}  %>
+               
+               
+              </tbody>
+            </table>
+          </div>
+		 
+		 
+		 
+		 
+		 
+		 
+		 

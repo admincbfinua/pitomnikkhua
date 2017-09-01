@@ -1,0 +1,17 @@
+﻿<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="panel-title">Разделы сайта</h3>
+	</div>
+	<div class="panel-body">
+		<ul class="nav nav-pills nav-stacked">
+		  <li role="presentation" <%if(url=='/ustav'){ %>class="active"<% } %>><a href="/ustav">Устав </a></li>
+		  <li role="presentation" <%if(url=='/otchetsobrania'){ %>class="active"<% } %>><a href="/otchetsobrania">Решения собраний</a></li>
+		  <li role="presentation" <%if(url=='/shablonidokumentov'){ %>class="active"<% } %>><a href="/shablonidokumentov">Шаблоны документов</a></li>
+		  <li role="presentation" <%if(url=='/electroenergia'){ %>class="active"<% } %>><a href="/electroenergia">Электроэнергия</a></li>
+		  <li role="presentation" <%if(url=='/water'){ %>class="active"<% } %>><a href="/water">Водоснабжение</a></li>
+		  <li role="presentation" <%if(url=='/novosti'){ %>class="active"<% } %>><a href="/novosti">Новости</a></li>
+		  <li role="presentation" <%if(url=='/dachi'){ %>class="active"<% } %>><a href="/dachi">Дачи участки</a></li>
+		  <% if(suser){ %><li role="presentation" <%if(url=='/prodamdachu'){ %>class="active"<% } %>><a href="/prodamdachu">Выставить дачу/участок на продажу</a></li><% } %>
+		</ul>
+	</div>
+</div>

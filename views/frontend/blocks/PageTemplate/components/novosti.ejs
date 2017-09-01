@@ -1,0 +1,29 @@
+﻿	
+	
+
+        <div class="row">
+
+           
+            <div class="col-md-12">
+
+               <% if(content.length) {
+                content.forEach(function(detail){ %>
+                <p class="lead">
+                     <a href="/"><%= detail.name %></a>
+                </p>
+                <p><span class="glyphicon glyphicon-time"></span> Создана <%= dateFormat(detail.created,"yyyy-mm-dd HH:MM:ss") %></p>
+                <hr>
+                
+                
+                <p><%= detail.full %></p>
+                
+
+                <hr>
+				
+				<%	})  %>
+				<%	} else{ %>
+				пока новостей нет
+				<%	}  %>
+			<div>
+		</div>
+	

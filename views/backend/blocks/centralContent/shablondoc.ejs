@@ -1,0 +1,59 @@
+ <h1 class="page-header">Решения собраний</h1>
+        
+		<div class="data-btn">
+			<button class="btn btn-success btn-lg" onClick="addShablondocs();">+ Добавить решение по собранию</button>
+		</div>	
+		 
+		 
+		 <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Повестка</th>
+				  <th>Кто проводит</th>
+				  <th>Полное описание</th>
+				  <th>Решение</th>
+				  <th>Дата проведения</th>
+                </tr>
+              </thead>
+              <tbody>
+               <% if(data.length) {
+							data.forEach(function(detail){ %>
+								<tr>
+									
+									<td><%= detail.povestka %></td>
+									<td><%= detail.ktoprovodit %></td>
+									<td width="20%"><%= detail.fulldescr %></td>
+									<td width="20%"><%= detail.reshenie %></td>
+									<td><%= detail.created.toDateString() %></td>
+									
+									<td>
+										<a class="a-inside edit" href="/backend/shablondocs/edit/<%= detail.id %>" >Редактировать</a>
+										<a class="a-inside delete" href="/backend/shablondocs/delete/<%= detail.id %>" >Удалить</a>
+									</td>
+								</tr>
+
+
+
+
+						<%    })
+						}else{ %>
+
+						<tr>
+							<td colspan="5">Нет данных по решениям собраний</td>
+						</tr>
+
+						<%
+						}  %>
+               
+               
+              </tbody>
+            </table>
+          </div>
+		 
+		 
+		 
+		 
+		 
+		 
+		 

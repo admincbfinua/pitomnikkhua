@@ -1,0 +1,21 @@
+﻿ <div class="templatemo-top-bar" id="templatemo-top">
+            <div class="container">
+                <div class="subheader">
+                    <div id="phone" class="pull-left">
+                            <!--Разработчик <a href="mailto:mischenkoa@ukr.net">mischenkoa@ukr.net</a>-->
+                            Интернет - партнер <a href="http://cbf.in.ua">CBF.IN.UA</a>
+                    </div>
+                    <div class="pull-right">
+                            <% if(suser){ %>
+							<div style="margin-top:-10px;">
+                            <form method="POST" action="/logout">
+								<button type="submit"><img src="/images/exit.png"><%= suser.get('username') %></button>
+							</form> 
+							</div>
+							<% }else{ %>
+							<a href="/login">Вход/регистрация</a>
+							<% } %>
+                    </div>
+                </div>
+            </div>
+  </div>

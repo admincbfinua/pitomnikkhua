@@ -1,0 +1,88 @@
+﻿ 
+        
+		<div class="data-btn">
+			<button class="btn btn-success btn-lg" onClick="adddacha();">+ Выставить дачу/участок на продажу</button>
+		</div>	
+		 
+		 
+		 <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                
+				  <th>Данные по участку</th>
+				  <th>Действия</th>
+                </tr>
+              </thead>
+              <tbody>
+               <% if(data.length) {
+							data.forEach(function(detail){ %>
+								<tr>
+									<% if(detail.num_user_add == suser.get('id')) { %>
+									<td>
+										<table class="table table-bordered">
+											<tr><td>номер участка</td><td><%= detail.num_uc %></td></tr>
+											<tr><td>товарищество</td><td><%= detail.naim_tov %></td></tr>
+											<tr><td>описание</td><td><%= detail.opis_uc %></td></tr>
+											<tr><td>площадь</td><td><%= detail.plosh_uc %></td></tr>
+											<tr><td>цена</td><td><%= detail.price %></td></tr>
+											<tr><td>фото</td><td>
+													<% if(detail.foto){ %>
+													<% var to_mass =  detail.foto.split(','); %>
+													<% var qtyfoto = to_mass.length %>
+													<% if(qtyfoto > 1){ %>
+														<% for(j=0;j < qtyfoto;j++){ %>
+															<img src="/images/prodamdachi/<%= to_mass[j] %>" width="200" height="">
+														<% } %>
+													<% }else{ %>
+														<img src="/images/prodamdachi/<%= detail.foto %>" width="200" height="">
+													<% } %>
+														
+													<% }else{ %>
+														нет фото
+													<% } %>
+												</td></tr>
+											<tr><td>контактное лицо</td><td><%= detail.contact_fio %></td></tr>
+											<tr><td>телефон</td><td><%= detail.contact_phone %></td></tr>
+										</table>
+									</td>
+									
+									
+									
+									
+									
+									
+									<td>
+										<table>
+											<tr><td><a class="a-inside edit" href="/prodamdachu/edit/<%= detail.id %>" >Редактировать</a></td></tr>
+											<tr><td><a class="a-inside delete" href="/prodamdachu/delete/<%= detail.id %>" >Удалить</a></td></tr>
+										
+										</table>
+									</td>
+									<% } %>
+								</tr>
+
+
+
+
+						<%    })
+						}else{ %>
+
+						<tr>
+							<td colspan="4">Вы ничего не выставляли </td>
+						</tr>
+
+						<%
+						}  %>
+               
+               
+              </tbody>
+            </table>
+          </div>
+		 
+		 
+		 
+		 
+		 
+		 
+		 

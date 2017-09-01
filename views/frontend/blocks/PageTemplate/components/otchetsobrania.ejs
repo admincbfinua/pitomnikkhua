@@ -1,0 +1,25 @@
+﻿<div class="row">
+
+           
+            <div class="col-md-12">
+
+               <% if(content.length) {
+                content.forEach(function(detail){ %>
+                <p class="lead">
+                     <a href="#"><%= detail.povestka %></a>
+                </p>
+                <p><span class="glyphicon glyphicon-time"></span> Состоялось <%= dateFormat(detail.created,"yyyy-mm-dd HH:MM:ss") %> Проводил <%= detail.ktoprovodit %></p>
+                <hr>
+                
+                
+                <p><%= detail.fulldescr %></p>
+                
+				<p><%= detail.reshenie %></p>
+                <hr>
+				
+				<%	})  %>
+				<%	} else{ %>
+			отчеты не внесены
+				<%	}  %>
+			<div>
+		</div>

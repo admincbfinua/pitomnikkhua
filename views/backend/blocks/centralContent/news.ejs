@@ -1,0 +1,59 @@
+ <h1 class="page-header">Новости</h1>
+        
+		<div class="data-btn">
+			<button class="btn btn-success btn-lg" onClick="addnews();">+ Добавить новость</button>
+		</div>	
+		 
+		 
+		 <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Тема новости</th>
+				  <th>Полный текст новости</th>
+				  <th>Важность</th>
+				  
+				  
+                </tr>
+              </thead>
+              <tbody>
+               <% if(data.length) {
+							data.forEach(function(detail){ %>
+								<tr>
+									
+									<td><%= detail.name %></td>
+									<td><%= detail.full %></td>
+									<td><%= detail.vazn %></td>
+									
+									
+									
+									<td>
+										<a class="a-inside edit" href="/backend/news/edit/<%= detail.id %>" >Редактировать</a>
+										<a class="a-inside delete" href="/backend/news/delete/<%= detail.id %>" >Удалить</a>
+									</td>
+								</tr>
+
+
+
+
+						<%    })
+						}else{ %>
+
+						<tr>
+							<td colspan="3">Новости не создавались или удалены</td>
+						</tr>
+
+						<%
+						}  %>
+               
+               
+              </tbody>
+            </table>
+          </div>
+		 
+		 
+		 
+		 
+		 
+		 
+		 
