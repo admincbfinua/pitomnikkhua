@@ -1,0 +1,3 @@
+To restart mongo demon use follow
+sudo mongod --dbpath /var/lib/mongodb/ --repair
+sudo mongod --dbpath /var/lib/mongodb/ --journal> /dev/null &
